@@ -3,6 +3,13 @@
     padding-bottom: 30px;
 }
 
+.bgImg {
+    background-image: url('/image/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .bgLight {
     padding-top: 20px;
     background-color: #041b33cb;

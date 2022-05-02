@@ -6,7 +6,7 @@ import SupplierCompanies from '../SupplierCompanies/SupplierCompanies';
 
 const Home = () => {
     return (
-        <div>
+        <div className='bgImg'>
             <div className='bg' >
                 <div className=' container '>
                     <Banner></Banner>
