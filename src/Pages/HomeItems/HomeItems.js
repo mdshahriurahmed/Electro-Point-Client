@@ -8,9 +8,10 @@ const HomeItems = () => {
     const sixItems = items.slice(0, 6);
     return (
         <div >
+            <h1 className='text-white text-center'>ITEMS</h1>
             <div className='row justify-content-center' style={{ paddingBottom: "200px" }}>
                 {
-                    sixItems.map(item => <Item key={item.id}
+                    sixItems.map(item => <Item key={item._id}
                         service={item}></Item>)
                 }
             </div>

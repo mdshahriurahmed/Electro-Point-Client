@@ -1,12 +1,24 @@
 import React from 'react';
+import './Home.css'
 import HomeItems from '../HomeItems/HomeItems'
-import Slider from '../Slider/Slider';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
-        <div className=' container '>
-            <Slider></Slider>
-            <HomeItems></HomeItems>
+        <div>
+            <div className='bg' >
+                <div className=' container '>
+                    <Banner></Banner>
+                </div>
+            </div>
+
+            <div className='bg' >
+                <div className=' container '>
+                    <HomeItems></HomeItems>
+                </div>
+            </div>
+
+
 
         </div>
     );
