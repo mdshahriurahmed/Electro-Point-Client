@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css'
-import HomeItems from '../HomeItems/HomeItems'
+import HomeInventories from '../HomeInventories/HomeInventories'
 import Banner from '../Banner/Banner';
 import SupplierCompanies from '../SupplierCompanies/SupplierCompanies';
 import SubscriptionForm from '../SubscriptionForm/SubscriptionForm';
@@ -21,7 +21,7 @@ const Home = () => {
 
             <div className='bg' >
                 <div className=' container pt-4 '>
-                    <HomeItems></HomeItems>
+                    <HomeInventories></HomeInventories>
                 </div>
             </div>
 
