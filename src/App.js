@@ -9,6 +9,8 @@ import DotLoader from "react-spinners/DotLoader";
 import { css } from "@emotion/react";
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
+import Inventory from './Pages/Inventory/Inventory';
+import RequireAuth from './Pages/RequireAuth/RequireAuth';
 
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
     }, 3000)
   }, [])
   return (
-    <div className="App">
+    <div className="App Appbg">
       {
         loading ?
           <div className='App-header'>
@@ -41,6 +43,9 @@ function App() {
               <Route path='/' element={<Home></Home>}></Route>
               <Route path='/login' element={<Login></Login>}></Route>
               <Route path='/signup' element={<SignUp></SignUp>}></Route>
+              <Route path='/inventory/:_id' element={<RequireAuth>
+                <Inventory></Inventory>
+              </RequireAuth>}></Route>
             </Routes>
             <Footer></Footer>
           </>
