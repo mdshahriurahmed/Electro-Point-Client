@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const Inventories = (props) => {
     const { _id, img, name, price, details, supplier, quantity } = props.service;
     const navigate = useNavigate();
-    const handleUpdate = id => {
+    const handleUpdate = _id => {
         navigate(`/inventory/${_id}`);
     }
     return (
