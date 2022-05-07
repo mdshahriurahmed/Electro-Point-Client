@@ -2,10 +2,13 @@ import { TrashIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useInventories from '../hooks/useInventories';
-import MyInventories from '../MyInventories/MyInventories';
+import './ManageInventory.css'
 
 const ManageInventory = () => {
     const navigate = useNavigate();
+    const handleUpdate = _id => {
+        navigate(`/inventory/${_id}`);
+    }
     const [inventories, setInventories] = useInventories();
     const handleDelete = id => {
         const proceed = window.confirm('are you sure');
@@ -48,7 +51,7 @@ const ManageInventory = () => {
                                     <hr />
                                     <p className="text-start ">{inventory.details}</p>
                                     <div className='d-flex justify-content-between align-items-center'>
-                                        <button style={{ backgroundColor: "#041b33", color: "#56B94E", border: "1px solid #56B94E", boxShadow: "5px 5px 10px black", textShadow: "5px 5px 10px black" }} className='btn  px-4  mb-3'>Update</button>
+                                        <button onClick={() => handleUpdate(inventory._id)} style={{ backgroundColor: "#041b33", color: "#56B94E", border: "1px solid #56B94E", boxShadow: "5px 5px 10px black", textShadow: "5px 5px 10px black" }} className='btn  px-4  mb-3'>Update</button>
                                         <button onClick={() => handleDelete(inventory._id)} className='  mb-3 deleteBtn'>
                                             <TrashIcon style={{ width: "20px" }} />
                                         </button>
@@ -61,10 +64,7 @@ const ManageInventory = () => {
                     )
                 }
 
-                {/* {
-                    inventories.map(inventory => <MyInventories key={inventory._id}
-                        inventory={inventory}></MyInventories>)
-                } */}
+
 
             </div>
         </div>
