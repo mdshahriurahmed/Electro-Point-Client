@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import './inventory.css'
 
 const Inventory = () => {
@@ -12,18 +13,45 @@ const Inventory = () => {
             .then(data => setInventory(data))
     }, [])
 
-    let new1 = parseInt(inventory.quantity);
-    const total = 1;
-    const [stockOut, setStockOut] = useState(false);
-    useEffect(() => {
-        if (total === 0) {
-            setStockOut(true);
-        }
-        else if (total > 0) {
-            setStockOut(false);
-        }
 
-    }, [])
+
+    // update quantity
+    const handleQuantity = event => {
+        event.preventDefault();
+        let { img, quantity, name, price, details, supplier, sold } = inventory;
+        if (quantity > 0) {
+            quantity = quantity - 1;
+            sold = sold + 1;
+            const updateQuantity = {
+                img: img,
+                quantity: quantity,
+                name: name,
+                price: price,
+                details: details,
+                supplier: supplier,
+                sold: sold,
+            };
+            const url = `https://arcane-beach-19880.herokuapp.com/inventory/${id}`;
+            fetch(url, {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(updateQuantity)
+            })
+
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log('success', data);
+                    toast('Delivered Successfully!!!');
+                    fetch(url)
+                        .then((res) => res.json())
+                        .then((data) => {
+                            setInventory(data);
+                        });
+                });
+        }
+    };
 
     return (
         <div className='container text-white'>
@@ -51,11 +79,12 @@ const Inventory = () => {
                         </div>
                         <div>
                             {
-                                stockOut ?
+                                !inventory.quantity ?
                                     <h1>Stockout</h1>
                                     :
                                     <div>
-                                        <button className='btn-design'>Delivered</button>
+                                        <button onClick={handleQuantity} className='btn-design'>Delivered</button>
+                                        <ToastContainer></ToastContainer>
                                     </div>
                             }
 
