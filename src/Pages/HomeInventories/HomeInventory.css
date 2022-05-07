@@ -1,0 +1,29 @@
+.buttondesign {
+    text-decoration: none;
+    font-size: 19px;
+    text-align: end;
+    color: rgb(86, 185, 78);
+    border: 1px solid rgb(86, 185, 78);
+    padding: 3px 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px black;
+    text-shadow: 5px 5px 10px black;
+
+}
+
+
+
+.button-setup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    ;
+}
+
+.buttondesign:hover {
+    color: white;
+    border: 1px solid white;
+}

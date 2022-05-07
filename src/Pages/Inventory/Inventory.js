@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import './inventory.css'
+import { Link } from 'react-router-dom';
+import { ArrowCircleRightIcon } from '@heroicons/react/solid'
 
 const Inventory = () => {
     const { id } = useParams();
@@ -145,20 +147,30 @@ const Inventory = () => {
             <form
                 onSubmit={handleRestock}
             >
-                <div className="d-flex justify-content-center align-items-center restock-design">
-                    <input
-                        name="restock"
-                        style={{ padding: "6px" }}
+                <div >
+                    <div className="d-flex justify-content-center align-items-center restock-design">
+                        <input
+                            name="restock"
+                            style={{ padding: "8px", border: "1px solid #56B94E", boxShadow: "5px 5px 10px black" }}
 
-                        type="number"
-                    />
-                    <input
-                        type="submit"
-                        value="ReStock"
-                        className='restock-btn-design'
-                    />
+                            type="number" placeholder='Enter Valid Quantity'
+                        />
+                        <input
+                            type="submit"
+                            value="ReStock"
+                            className='restock-btn-design'
+                        />
+                    </div>
                 </div>
             </form>
+
+            <div className='gap button-setup1'>
+                <Link to='/manageInventory' className='buttondesign1'>
+                    Manage Inventory
+                    <ArrowCircleRightIcon style={{ width: "20px" }} className="h-5 w-5 ms-2 text-blue-500" />
+                </Link>
+
+            </div>
 
 
         </div>

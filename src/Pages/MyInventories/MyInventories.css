@@ -1,0 +1,9 @@
+.deleteBtn {
+    color: red;
+    text-align: center;
+    border: 1px solid red;
+    border-radius: 50%;
+    background-color: #041b33;
+    box-shadow: 5PX 5PX 10PX BLACK;
+    padding: 7px 10px;
+}

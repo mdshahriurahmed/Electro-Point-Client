@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { TrashIcon } from '@heroicons/react/solid'
+import './MyInventories.css'
 
-const Inventories = (props) => {
+const MyInventories = (props) => {
     const { _id, img, name, price, details, supplier, quantity } = props.service;
     const navigate = useNavigate();
     const handleUpdate = id => {
@@ -22,8 +24,12 @@ const Inventories = (props) => {
                     <h6>Quantity: {quantity}</h6>
                     <hr />
                     <p className="text-start ">{details}</p>
-                    <div className='d-flex justify-content-center'>
-                        <button onClick={() => handleUpdate(_id)} style={{ backgroundColor: "#041b33", color: "#56B94E", border: "1px solid #56B94E", boxShadow: "5px 5px 10px black", textShadow: "5px 5px 10px black" }} className='btn  px-5  mb-3'>Update</button>
+                    <div className='d-flex justify-content-between align-items-center'>
+                        <button onClick={() => handleUpdate(_id)} style={{ backgroundColor: "#041b33", color: "#56B94E", border: "1px solid #56B94E", boxShadow: "5px 5px 10px black", textShadow: "5px 5px 10px black" }} className='btn  px-4  mb-3'>Update</button>
+                        <button className='    mb-3 deleteBtn'>
+                            <TrashIcon style={{ width: "20px" }} />
+                        </button>
+
                     </div>
                 </div>
             </div>
@@ -32,4 +38,4 @@ const Inventories = (props) => {
     );
 };
 
-export default Inventories;
+export default MyInventories;
