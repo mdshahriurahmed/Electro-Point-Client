@@ -7,8 +7,8 @@ const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     const location = useLocation();
     if (loading) {
-        return <div class="spinner-border" style={{ marginTop: "150px" }} role="status">
-            <span class="visually-hidden">Loading...</span>
+        return <div className="spinner-border" style={{ marginTop: "150px" }} role="status">
+            <span className="visually-hidden">Loading...</span>
         </div>
     }
     if (!user) {

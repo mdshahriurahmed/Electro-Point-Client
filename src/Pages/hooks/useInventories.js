@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
 
-const useItems = () => {
-    const [items, setItems] = useState([]);
+const useInventories = () => {
+    const [inventories, setInventories] = useState([]);
     useEffect(() => {
-        fetch('https://arcane-beach-19880.herokuapp.com/items')
+        fetch('https://arcane-beach-19880.herokuapp.com/inventories')
             .then(res => res.json())
-            .then(data => setItems(data)
+            .then(data => setInventories(data)
             )
     }, []);
-    return [items, setItems];
+    return [inventories, setInventories];
 }
 
-export default useItems;
+export default useInventories;

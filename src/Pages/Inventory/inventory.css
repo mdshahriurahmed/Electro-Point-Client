@@ -1,0 +1,68 @@
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.img-align img {
+    width: 80%;
+}
+
+.width-control {
+    width: 50%;
+}
+
+.img-align {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.btn-design {
+    background-color: #56B94E;
+    /* color: #041b33; */
+    color: white;
+    font-weight: 700;
+    margin-bottom: 100px;
+    padding: 5px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.btn-design:hover {
+    background-color: green;
+    color: #041b33;
+}
+
+
+/* -----------------------------
+----media query for mobile and medium  view-----
+------------------------------*/
+@media (max-width: 1000px) {
+
+
+    .flex-container {
+        display: flex;
+        margin-bottom: 30px;
+        flex-direction: column-reverse;
+        padding: 0;
+        justify-content: center;
+    }
+
+
+    .width-control {
+        width: 80%;
+    }
+
+    .img-align {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .img-align img {
+        width: 100%;
+    }
+
+
+}
