@@ -53,6 +53,50 @@ const Inventory = () => {
         }
     };
 
+    //update Restock
+    const handleRestock = event => {
+        event.preventDefault();
+        let { img, quantity, name, price, details, supplier, sold } = inventory;
+        const newStock = event.target.restock.value;
+        console.log(newStock);
+        if (!newStock || newStock < 0) {
+            toast("Please enter a valid number");
+        } else {
+            quantity = parseInt(quantity) + parseInt(newStock);
+            const updateStock = {
+                quantity: quantity,
+                name: name,
+                price: price,
+                details: details,
+                supplier: supplier,
+                img: img,
+                sold: sold,
+            };
+            const url = `https://arcane-beach-19880.herokuapp.com/inventory/${id}`;
+            fetch(url, {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify(updateStock),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log('successfully restocked', data);
+                    toast("Stock Updated");
+
+                    fetch(url)
+                        .then((res) => res.json())
+                        .then((data) => {
+                            setInventory(data);
+                            event.target.reset();
+                        });
+                });
+        }
+
+
+    };
+
     return (
         <div className='container text-white'>
             <h1 className='text-center mb-5'>Inventory</h1>
@@ -98,6 +142,25 @@ const Inventory = () => {
                     </div>
                 </div>
             </div>
+            <form
+                onSubmit={handleRestock}
+            >
+                <div className="d-flex justify-content-center align-items-center restock-design">
+                    <input
+                        name="restock"
+                        style={{ padding: "6px" }}
+
+                        type="number"
+                    />
+                    <input
+                        type="submit"
+                        value="ReStock"
+                        className='restock-btn-design'
+                    />
+                </div>
+            </form>
+
+
         </div>
     );
 };

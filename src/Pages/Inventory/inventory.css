@@ -22,11 +22,28 @@
     /* color: #041b33; */
     color: white;
     font-weight: 700;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     padding: 5px 30px;
     border: none;
     border-radius: 5px;
     font-size: 20px;
+}
+
+.restock-btn-design {
+    background-color: #56B94E;
+    /* color: #041b33; */
+    color: white;
+    font-weight: 700;
+    padding: 5px 30px;
+    border: none;
+
+    font-size: 20px;
+}
+
+.restock-design {
+    padding-bottom: 100px;
+
+    ;
 }
 
 .btn-design:hover {
