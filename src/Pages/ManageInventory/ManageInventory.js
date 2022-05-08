@@ -1,16 +1,21 @@
 import { PlusCircleIcon, TrashIcon } from '@heroicons/react/solid';
 import React from 'react';
+
 import { Link, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+
 import useInventories from '../hooks/useInventories';
 import './ManageInventory.css'
 
 const ManageInventory = () => {
+
     const navigate = useNavigate();
     const handleUpdate = _id => {
         navigate(`/inventory/${_id}`);
     }
     const [inventories, setInventories] = useInventories();
+
+
     const handleDelete = id => {
         const proceed = window.confirm('are you sure');
         if (proceed) {
@@ -38,7 +43,7 @@ const ManageInventory = () => {
 
                 {
                     inventories.map(inventory =>
-                        <div key={inventory._id} className='g-3 col-sm-12 col-md-6 col-lg-4 row justify-content-center'>
+                        <div key={inventory._id} className='g-3 my-5 col-sm-12 col-md-6 col-lg-4 row justify-content-center'>
                             <div className="card  px-0 mx-0" style={{ width: "18rem", backgroundColor: "#041b33", boxShadow: '5px 5px 20px black' }}>
                                 <img src={inventory.img} className="card-img-top" alt="..." />
                                 <div className="card-body text-white">
@@ -53,10 +58,11 @@ const ManageInventory = () => {
                                     <p className="text-start ">{inventory.details}</p>
                                     <div className='d-flex justify-content-between align-items-center'>
                                         <button onClick={() => handleUpdate(inventory._id)} style={{ backgroundColor: "#041b33", color: "#56B94E", border: "1px solid #56B94E", boxShadow: "5px 5px 10px black", textShadow: "5px 5px 10px black" }} className='btn  px-4  mb-3'>Update</button>
+                                        <ToastContainer></ToastContainer>
                                         <button onClick={() => handleDelete(inventory._id)} className='  mb-3 deleteBtn'>
                                             <TrashIcon style={{ width: "20px" }} />
                                         </button>
-                                        <ToastContainer></ToastContainer>
+
                                     </div>
                                 </div>
                             </div>
