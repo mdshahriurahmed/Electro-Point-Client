@@ -15,6 +15,7 @@ import NotFound from './Pages/NotFound/NotFound'
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import AddNewItem from './Pages/AddNewItem/AddNewItem';
 import MyItem from './Pages/MyItem/MyItem';
+import Blogs from './Pages/Blogs/Blogs';
 
 
 function App() {
@@ -64,8 +65,8 @@ function App() {
               <Route path='/myItem' element={<RequireAuth>
                 <MyItem></MyItem>
               </RequireAuth>}>
-
               </Route>
+              <Route path='/blogs' element={<Blogs></Blogs>}></Route>
             </Routes>
             <Footer></Footer>
           </>
