@@ -30,17 +30,17 @@ const SocialLogin = () => {
     return (
         <div>
             <div>
-                <button onClick={() => signInWithGoogle()} className='btn-light border border-dark border-2 rounded w-100 my-3'>
+                <button onClick={() => signInWithGoogle()} className='design btnhover   w-100 my-3'>
                     <img src={google} alt="" style={{ width: "30px" }} />
                     <span className='px-2'>Google Sign In</span>
                 </button>
             </div>
             {errorElement}
             <div className='d-flex align-items-center '>
-                <div style={{ height: "1px" }} className='bg-white w-50'>
+                <div style={{ height: "1px", backgroundColor: "rgb(86, 185, 78)" }} className=' w-50'>
                 </div>
                 <p className='fw-bold mt-2 px-2 text-white'>or</p>
-                <div style={{ height: "1px" }} className='bg-white w-50'>
+                <div style={{ height: "1px", backgroundColor: "rgb(86, 185, 78)" }} className=' w-50'>
                 </div>
             </div>
         </div>

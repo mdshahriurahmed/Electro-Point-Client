@@ -10,7 +10,7 @@ import SocialLogin from './SocialLogin/SocialLogin';
 import { async } from '@firebase/util';
 import DotLoader from "react-spinners/DotLoader";
 import { css } from "@emotion/react";
-
+import './Login.css'
 
 const Login = () => {
 
@@ -81,18 +81,18 @@ const Login = () => {
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3 text-start text-white" controlId="formBasicEmail">
                         <Form.Label >Email address</Form.Label>
-                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                        <Form.Control className='design' ref={emailRef} type="email" placeholder="Enter email" required />
 
                     </Form.Group>
                     <p className='text-danger text-start'>{errorr}</p>
 
-                    <Form.Group className="mb-3 text-start text-white" controlId="formBasicPassword">
+                    <Form.Group className="mb-3  text-start text-white" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                        <Form.Control className='design' ref={passwordRef} type="password" placeholder="Password" required />
                     </Form.Group>
                     <p >{errorElement}</p>
                     <div className='d-flex justify-content-center'>
-                        <Button className='px-5 mb-3' variant="dark" type="submit">
+                        <Button className='px-5 mb-3 btnhover gap design' type="submit">
                             Log In
                         </Button>
                     </div>

@@ -1,6 +1,7 @@
-import { TrashIcon } from '@heroicons/react/solid';
+import { PlusCircleIcon, TrashIcon } from '@heroicons/react/solid';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import useInventories from '../hooks/useInventories';
 import './ManageInventory.css'
 
@@ -20,7 +21,7 @@ const ManageInventory = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        console.log('deleted');
+                        toast('Deleted Successfully!');
                         const remaining = inventories.filter(user => user._id !== id);
                         setInventories(remaining);
                     }
@@ -31,7 +32,7 @@ const ManageInventory = () => {
 
     return (
 
-        <div className='container' >
+        <div className='container gap' >
             <h1 className='mt-5 text-center text-white'>Manage Inventory</h1>
             <div className='row justify-content-center' >
 
@@ -55,7 +56,7 @@ const ManageInventory = () => {
                                         <button onClick={() => handleDelete(inventory._id)} className='  mb-3 deleteBtn'>
                                             <TrashIcon style={{ width: "20px" }} />
                                         </button>
-
+                                        <ToastContainer></ToastContainer>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +65,13 @@ const ManageInventory = () => {
                     )
                 }
 
+            </div>
 
+            <div className=' button-setup2'>
+                <Link to='/addNewItem' className='buttondesign2'>
+                    Add New Item
+                    <PlusCircleIcon style={{ width: "20px" }} className="h-5 w-5 ms-2 text-blue-500" />
+                </Link>
 
             </div>
         </div>

@@ -77,24 +77,24 @@ const SignUp = () => {
 
                     <Form.Group className="mb-3 text-start text-white" controlId="formBasicEmail">
                         <Form.Label >Email address</Form.Label>
-                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                        <Form.Control className='design' ref={emailRef} type="email" placeholder="Enter email" required />
 
                     </Form.Group>
 
                     <Form.Group className="mb-3 text-start text-white" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                        <Form.Control className='design' ref={passwordRef} type="password" placeholder="Password" required />
                     </Form.Group>
                     <Form.Group className="mb-3 text-start text-white" controlId="formBasicPassword">
                         <Form.Label>Confirm Password</Form.Label>
-                        <Form.Control ref={confirmPasswordRef} type="password" placeholder="Confirm Password" required />
+                        <Form.Control className='design' ref={confirmPasswordRef} type="password" placeholder="Confirm Password" required />
                     </Form.Group>
                     <Form.Group className="mb-3 text-start" controlId="formBasicCheckbox">
-                        <Form.Check className={agree ? 'text-dark' : 'text-white'} onClick={() => setAgree(!agree)} type="checkbox" label="Accept Terms and Conditions " />
+                        <Form.Check className={agree ? 'text-success' : 'text-white'} onClick={() => setAgree(!agree)} type="checkbox" label="Accept Terms and Conditions " />
                     </Form.Group>
                     <p className='text-danger text-start'>{errorr}</p>
                     <div className='d-flex justify-content-center'>
-                        <Button disabled={!agree} className='px-5 mb-3' variant="dark" type="submit">
+                        <Button disabled={!agree} className='px-5 design btnhover mb-3  ' type="submit">
                             Sign Up
                         </Button>
                     </div>

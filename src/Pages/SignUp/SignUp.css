@@ -1,0 +1,22 @@
+.gap {
+
+    margin-top: 20px;
+
+}
+
+.design {
+    background-color: #041b33;
+    border: 1px solid rgb(86, 185, 78);
+    ;
+    border-radius: 5px;
+    color: rgb(86, 185, 78);
+    box-shadow: 5px 5px 10px black;
+    text-shadow: 5px 5px 10px black;
+}
+
+.btnhover:hover {
+    background-color: rgb(40, 134, 33);
+    border: 1px solid rgb(86, 185, 78);
+    ;
+    color: white;
+}
