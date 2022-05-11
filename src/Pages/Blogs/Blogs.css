@@ -1,5 +1,9 @@
-.tabledesign th,
-td {
+.tabledesign th {
+    border: 2px solid rgb(86, 185, 78);
+
+}
+
+.tabledesign td {
     border: 2px solid rgb(86, 185, 78);
 
 }
